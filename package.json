@@ -28,5 +28,15 @@
     "mongoose": "^5.12.1",
     "nodemon": "^2.0.7",
     "schmervice": "^1.6.0"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@models": "server/models",
+    "@plugins": "server/plugins",
+    "@routes": "server/routes",
+    "@utilities": "server/utilities",
+    "@policies": "server/policies",
+    "@services": "server/services",
+    "@api": "server/api"
   }
 }
