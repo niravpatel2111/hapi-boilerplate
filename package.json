@@ -1,0 +1,32 @@
+{
+  "name": "hapi-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:local",
+    "start:local": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/glue": "^8.0.0",
+    "@hapi/hapi": "^20.1.1",
+    "@hapi/wreck": "^17.1.0",
+    "bcrypt": "^5.0.1",
+    "bluebird": "^3.7.2",
+    "dotenv": "^8.2.0",
+    "glob": "^7.1.6",
+    "joi": "^17.4.0",
+    "joi-objectid": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.1",
+    "nodemon": "^2.0.7",
+    "schmervice": "^1.6.0"
+  }
+}

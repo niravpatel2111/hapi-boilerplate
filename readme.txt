@@ -1,0 +1,1 @@
+npm install --save nodemon @hapi/boom @hapi/glue @hapi/wreck bcrypt bluebird glob joi joi-objectid jsonwebtoken lodash module-alias moment mongoose schmervice
