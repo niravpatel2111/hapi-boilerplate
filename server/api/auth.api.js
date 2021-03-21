@@ -291,7 +291,7 @@ module.exports = {
             if (user) {
               return user
             }
-            errorHelper.handleError(errors.user.invalideCredentials)
+            errorHelper.handleError(errors.user.invalidCredentials)
           } catch (err) {
             errorHelper.handleError(err)
           }
