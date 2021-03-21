@@ -2,7 +2,7 @@
 exports.plugin = {
   async register(server, options) {
     const User = require('@models/user.model').schema
-
+    const { constants } = require('@utilities/constants')
     const jwtValidate = async (decodedToken, request, h) => {
       const credentials = {
         user: {}
@@ -19,7 +19,7 @@ exports.plugin = {
     }
 
     server.auth.strategy('auth', 'jwt', {
-      key: 'JWT_SECRET',
+      key: constants.JWT_SECRET,
       validate: jwtValidate,
       verifyOptions: {
         algorithms: ['HS256']

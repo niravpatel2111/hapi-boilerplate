@@ -2,6 +2,7 @@
 
 const Jwt = require('jsonwebtoken')
 const errorHelper = require('./error-helper')
+const { constants } = require('@utilities/constants')
 
 function createToken(user, expirationPeriod) {
   try {
@@ -18,7 +19,7 @@ function createToken(user, expirationPeriod) {
     token = Jwt.sign({
       user: tokenUser
     },
-      'JWT_SECRET', {
+      constants.JWT_SECRET, {
       algorithm: 'HS256',
       expiresIn: expirationPeriod
     }

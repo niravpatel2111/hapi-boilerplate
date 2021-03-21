@@ -7,7 +7,7 @@ Joi.objectId = require('joi-objectid')(Joi)
 const errorHelper = require('@utilities/error-helper')
 const Token = require('@utilities/create-token')
 const generalHelper = require('@utilities/helper')
-const { errors } = require('@utilities/constants')
+const { errors, constants } = require('@utilities/constants')
 const User = require('@models/user.model').schema
 
 
@@ -52,7 +52,7 @@ module.exports = {
         assign: 'accessToken',
         method: (request, h) => {
           const { pre } = request
-          return Token(pre.user, '730d')
+          return Token(pre.user, constants.EXPIRATION_PERIOD)
         }
       },
       {

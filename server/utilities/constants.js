@@ -15,11 +15,20 @@ const errors = {
       code: 'user_not_exist',
       message: 'User is not exist'
     },
-   
- 
   },
 }
 
+const envConstants = {
+
+}
+
+const constants = {
+  JWT_SECRET: 'sjflkjsdlfjslkdjfjsdljflksdjf',
+  EXPIRATION_PERIOD: '730d'
+}
+
 module.exports = {
-  errors
+  errors,
+  envConstants,
+  constants
 }
