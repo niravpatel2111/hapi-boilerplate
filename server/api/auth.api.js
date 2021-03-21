@@ -7,7 +7,7 @@ Joi.objectId = require('joi-objectid')(Joi)
 const errorHelper = require('@utilities/error-helper')
 const Token = require('@utilities/create-token')
 const generalHelper = require('@utilities/helper')
-const { errors, constants } = require('@utilities/constants')
+const { errors, constants, environment } = require('@utilities/constants')
 const User = require('@models/user.model').schema
 
 
@@ -185,7 +185,7 @@ module.exports = {
       //         subject: `Account verification`,
       //         html: `${signup.userName}, <br>
       //         Your account has been created.<br>
-      //         Please <a href=${config.console_url}/auth/verify-account/${id} target="_blank">Click Here</a> to verify your account.`
+      //         Please <a href=${environment.consoleUrl}/auth/verify-account/${id} target="_blank">Click Here</a> to verify your account.`
       //       }
       //       await generalHelper.sendEmail(mailObj)
       //       return h.continue

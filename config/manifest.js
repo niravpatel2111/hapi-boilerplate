@@ -1,22 +1,10 @@
 'use strict'
 
-const CURRENT_ENV = process.env.ENV;
-const config = {
-  port: 3600,
-  debug: {
-    request: ['error', 'info'],
-    log: ['info', 'error', 'warning']
-  },
-  connections: {
-    db: process.env.DB
-  }
-}
-
 const mongoose = require('mongoose')
-
+const { environment } = require('@utilities/constants')
 let plugins = []
 
-if (CURRENT_ENV !== 'LOCAL') {
+if (process.env.ENV !== 'LOCAL') {
   mongoose.set('debug', true)
 }
 
@@ -27,7 +15,7 @@ plugins = plugins.concat([
   {
     plugin: '@plugins/mongoose.plugin',
     options: {
-      connections: config.connections
+      connections: environment.connections
     }
   },
   {
@@ -88,8 +76,8 @@ exports.manifest = {
       jsonp: 'callback', // <3 Hapi,
       auth: false // remove this to enable authentication or set your authentication profile ie. auth: 'jwt'
     },
-    debug: config.debug,
-    port: config.port
+    debug: environment.debug,
+    port: environment.port
   },
   register: {
     plugins

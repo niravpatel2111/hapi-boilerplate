@@ -18,17 +18,32 @@ const errors = {
   },
 }
 
-const envConstants = {
-
-}
-
 const constants = {
   JWT_SECRET: 'sjflkjsdlfjslkdjfjsdljflksdjf',
-  EXPIRATION_PERIOD: '730d'
+  EXPIRATION_PERIOD: '730d',
+  LOCAL: {
+    port: 3600,
+    debug: {
+      request: ['error', 'info'],
+      log: ['info', 'error', 'warning']
+    },
+    connections: {
+      db: process.env.DB
+    },
+    consoleUrl: ''
+  },
+  DEV: {
+
+  },
+  PROD: {
+
+  }
 }
+
+const environment = constants[process.env.ENV]
 
 module.exports = {
   errors,
-  envConstants,
-  constants
+  constants,
+  environment
 }
