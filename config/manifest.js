@@ -1,11 +1,6 @@
 'use strict'
 
 const CURRENT_ENV = process.env.ENV;
-
-const getArgument = argument => {
-  return process.argv.indexOf(argument)
-}
-
 const config = {
   port: 3600,
   debug: {
@@ -29,23 +24,25 @@ plugins = plugins.concat([
   {
     plugin: 'schmervice'
   },
-  // {
-  //   plugin: '@plugins/mongoose.plugin',
-  //   options: {
-  //     connections: config.connections
-  //   }
-  // },
-  // {
-  //   // if you need authentication then uncomment this plugin, and remove "auth: false" below
-  //   plugin: '@plugins/auth.plugin'
-  // },
+  {
+    plugin: '@plugins/mongoose.plugin',
+    options: {
+      connections: config.connections
+    }
+  },
+  {
+    plugin: 'hapi-auth-jwt2'
+  },
+  {
+    plugin: '@plugins/auth.plugin'
+  },
   {
     plugin: '@routes/root.route'
   }
 ])
 
 const routesObj = {
-  // 'auth.route': '',
+  'auth.route': '',
 }
 
 const routes = Object.keys(routesObj)

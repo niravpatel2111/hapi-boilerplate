@@ -35,6 +35,7 @@
 'use strict'
 
 require('module-alias/register')
+require('dotenv').config()
 const Glue = require('@hapi/glue')
 const Glob = require('glob')
 const serverConfig = require('./config/manifest')
