@@ -67,20 +67,20 @@ module.exports = {
           return h.continue
         }
       },
-      {
-        assign: 'emailVerified',
-        method: async (request, h) => {
-          const {
-            pre: { user }
-          } = request
-          if (!user.emailVerified) {
-            errorHelper.setValidationError({
-              email: 'Please verify your email'
-            })
-          }
-          return h.continue
-        }
-      }
+      // {
+      //   assign: 'emailVerified',
+      //   method: async (request, h) => {
+      //     const {
+      //       pre: { user }
+      //     } = request
+      //     if (!user.emailVerified) {
+      //       errorHelper.setValidationError({
+      //         email: 'Please verify your email'
+      //       })
+      //     }
+      //     return h.continue
+      //   }
+      // }
     ],
     handler: async (request, h) => {
       const {
